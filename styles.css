@@ -66,6 +66,7 @@ h1 {
   cursor: url('assets/images/red-crosshairs.svg') 30 30, auto;
 }
 button {
+  display: none;
   padding: 10px 20px;
   border-radius: 7px;
 }
