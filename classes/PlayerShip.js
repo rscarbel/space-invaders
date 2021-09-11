@@ -1,8 +1,8 @@
 class PlayerShip extends Ship {
-  constructor (health, agility, firepower, firerate, accuracy, armor, name, sprite, healers, missiles) {
-    super (health, agility, firepower, accuracy, armor, name, sprite);
-    this.healers = healers;
-    this.missiles = this.missiles;
+  constructor (health, agility, firepower, firerate, accuracy, armor, name, sprite) {
+    super (health, agility, firepower, firerate, accuracy, armor, name, sprite);
+    this.healers = 0;
+    this.missiles = 0;
     this.damageSprite = '';
   }
   heal(healingAmount) {

@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width">
     <title>Space Invaders</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
-    <script src="svg-scripts\spritesSVG.js" defer></script>
-    <script src="svg-scripts\insertSprites.js" defer></script>
+    <script src="classes\Ship.js" defer></script>
     <script src="classes\AlienShip.js" defer></script>
     <script src="classes\PlayerShip.js" defer></script>
-    <script src="classes\Ship.js" defer></script>
+    <script src="svg-scripts\spritesSVG.js" defer></script>
+    <script src="svg-scripts\insertSprites.js" defer></script>
     <script src="script.js" defer></script>
   </head>
   <body>
     <div id="top-menu">
       <h1>Space Invaders!</h1>
-      <p id="intro-text">You are the galaxy's last hope! Defend against the invasion!\nClick the alien ships to attack!</p>
+      <p id="intro-text">You are the galaxy's last hope! Defend against the invasion!<br/>nClick the alien ships to attack!</p>
       <button>Play Game</button>
     </div>
     <div id="game-container">
@@ -34,8 +34,8 @@
             </div>
           </div>
           <div class="player-zone">
-            <div class="player-ship"></div>
-            <div class="player-damage"></div>
+            <div id="player-ship"></div>
+            <div id="player-damage"></div>
           </div>
         </div>
       </div>

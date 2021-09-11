@@ -56,10 +56,12 @@ const generateAlien2Ship = () => {
   return new Ship(15, 0.1, 4, 2500, 0.7, 0.2, 'Juggernaught', alienShip2Full)
 }
 
-const ussAssembly = new PlayerShip(25, 0, 4, 1750, 0.7, 0, 'Player', playerShip0, 0, 0)
+playerShip = new PlayerShip(25, 0, 4, 1750, 0.7, 0, 'Player', playerShip0, 0, 0);
+console.log(playerShip)
 
 
 alien1 = generateAlien1Ship();
+
 console.log(alien1)
 
 updateDisplay();
