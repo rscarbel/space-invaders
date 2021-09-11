@@ -1,23 +1,25 @@
 const introText = document.querySelector("#intro-text");
 const alienImage = document.querySelector('#alien-ship');
-const playGameBtn = document.querySelector('button')
+const playGameBtn = document.querySelector('button');
 
 class Ship {
-  constructor(hull, firepower, accuracy, armor, name) {
+  constructor(health, firepower, accuracy, armor, name, sprite) {
     this.health = health;
+    this.maxHealth = health;
     this.firepower = firepower;
     this.accuracy = accuracy;
     this.armor = armor;
-    this.name = name
+    this.name = name;
+    this.sprite = sprite;
   }
   attack() {
     if (Math.random() < this.accuracy) {
-      return this.firepower
+      return this.firepower;
     } else
       return 0;
   }
   takeDamage(damage) {
-    this.health - damage
+    this.health = Math.floor(this.health - damage + (damage * this.armor) + 0.5);
   }
 }
 
@@ -46,11 +48,4 @@ playGameBtn.addEventListener('click', function () {
     alert('attacked')
   })
 })
-
-
-/*
-generate 6 ships
-have options for user to attack or run
-
-*/
 
