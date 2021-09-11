@@ -3,23 +3,34 @@ const alienImage = document.querySelector('#alien-ship');
 const playGameBtn = document.querySelector('button');
 
 class Ship {
-  constructor(health, firepower, accuracy, armor, name, sprite) {
+  constructor(health, agility, firepower, firerate, accuracy, armor, name, sprite) {
     this.health = health;
     this.maxHealth = health;
+    this.agility = agility;
     this.firepower = firepower;
+    this.firerate = firerate
     this.accuracy = accuracy;
     this.armor = armor;
     this.name = name;
     this.sprite = sprite;
   }
-  attack() {
-    if (Math.random() < this.accuracy) {
-      return this.firepower;
+  attack(opponetAgility) {
+    if (Math.random() < (this.accuracy - opponetAgility)) {
+      return generateValue(1,this.firepower);
     } else
       return 0;
   }
   takeDamage(damage) {
     this.health = Math.floor(this.health - damage + (damage * this.armor) + 0.5);
+    if (this.health < 0) {
+      this.health = 0;
+    }
+  }
+}
+
+class PlayerShip extends Ship {
+  constructor (health, agility, firepower, firerate, accuracy, armor, name, sprite, regeneration, missles) {
+    super (health, agility, firepower, accuracy, armor, name, sprite);
   }
   heal(healingAmount) {
     this.health += healingAmount;
@@ -29,17 +40,25 @@ class Ship {
   }
 }
 
-class PlayerShip extends Ship {
-
+class AlienShip0 extends Ship {
+  constructor(health, agility, firepower, firerate, accuracy, armor, name, sprite) {
+    super (health, agility, firepower, accuracy, armor, name, sprite);
+  }
 }
 
-const generateAlienStats = (min, max) => {
+const generateValue = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-const generateAlienShip = () => {
-  return new Ship(generateAlienStats(3, 6), generateAlienStats(2, 4), generateAlienStats(2, 4) * 0.1, 0, 'Alien')
+const generateAlien0Ship = () => {
+  return new Ship(6, 1, 3, 2500, 4 * 0.1, 0, 'Saucer Alien', )
 }
+
+const generateAlien1Ship = () => {
+  return new Ship(3, 7, 1750, 7 * 0.1, 2, 'Attacker Alien')
+}
+
+
 
 const alienTeam = [];
 for (i = 0; i < 6; i++) {
