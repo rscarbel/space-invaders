@@ -3,6 +3,7 @@
 :root {
 
 }
+
 body {
   font-family: 'Share Tech Mono', monospace;
   color: #FFFFFF;
@@ -12,11 +13,13 @@ body {
   background-color: #203864;
 }
 h1 {
+  margin-top: 2px;
   font-size: 60px;
 }
 
 #top-menu{
   display: block;
+
   height: 15vh;
 }
 #game-container {
@@ -47,6 +50,7 @@ h1 {
   align-content: space-around;
   justify-content: space-around;
   height: 100%;
+  padding-top:20px;
 }
 .alien-zone {
   display: flex;

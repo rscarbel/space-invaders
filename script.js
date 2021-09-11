@@ -29,8 +29,10 @@ class Ship {
 }
 
 class PlayerShip extends Ship {
-  constructor (health, agility, firepower, firerate, accuracy, armor, name, sprite, regeneration, missles) {
+  constructor (health, agility, firepower, firerate, accuracy, armor, name, sprite, healers, missiles) {
     super (health, agility, firepower, accuracy, armor, name, sprite);
+    this.healers = healers;
+    this.missiles = this.missiles;
   }
   heal(healingAmount) {
     this.health += healingAmount;
@@ -38,6 +40,16 @@ class PlayerShip extends Ship {
       this.health = this.maxHealth
     }
   }
+  healthRegeneration () {
+    this.heal(this.healers);
+    setTimeOut(this.healthRegeneration,2500)
+  }
+  fireMissile () {
+    if (this.missiles) {
+      this.missiles--;
+    }
+    return this.missiles;
+    }
 }
 
 class AlienShip0 extends Ship {
@@ -51,22 +63,18 @@ const generateValue = (min, max) => {
 }
 
 const generateAlien0Ship = () => {
-  return new Ship(6, 1, 3, 2500, 4 * 0.1, 0, 'Saucer Alien', )
+  return new Ship(6, 0.1, 4, 2250, 0.6, 0.1, 'Saucer', alienShip0Full )
 }
 
 const generateAlien1Ship = () => {
-  return new Ship(3, 7, 1750, 7 * 0.1, 2, 'Attacker Alien')
+  return new Ship(3, -0.2, 8, 1750, 0.85, 0, 2, 'Attacker', alienShip1Full)
 }
 
-
-
-const alienTeam = [];
-for (i = 0; i < 6; i++) {
-  alienTeam.push(generateAlien0Ship)
+const generateAlien2Ship = () => {
+  return new Ship(15, 0.1, 4, 2500, 0.7, 0.2, 'Juggernaught', alienShip2Full)
 }
 
-
-const ussAssembly = new Ship(20, 5, 0.7, 0, 'Player 1')
+const ussAssembly = new PlayerShip(25, 0, 4, 1750, 0.7, 0, 'Player 1', playerShip0, 0, 0)
 
 
 playGameBtn.addEventListener('click', function () {
