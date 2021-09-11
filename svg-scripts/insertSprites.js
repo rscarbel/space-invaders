@@ -5,4 +5,6 @@ const alienShipBottom = document.querySelector('#alien-ship-bottom');
 const playerDamageZone = document.querySelector('.player-damage');
 
 playerShipZone.innerHTML = playerShip0;
-alienShipMiddle.innerHTML = alienShip0Full;
+alienShipTop.innerHTML = alienShip0Full;
+alienShipMiddle.innerHTML = alienShip1Full;
+alienShipBottom.innerHTML = '';

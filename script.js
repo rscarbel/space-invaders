@@ -62,7 +62,7 @@ const generateAlien1Ship = () => {
 
 const alienTeam = [];
 for (i = 0; i < 6; i++) {
-  alienTeam.push(generateAlienShip)
+  alienTeam.push(generateAlien0Ship)
 }
 
 
