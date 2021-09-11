@@ -3,33 +3,30 @@ const alienImage = document.querySelector('#alien-ship');
 const playGameBtn = document.querySelector('button')
 
 class Ship {
-  constructor(hull, firepower, accuracy, name) {
-    this.hull = hull;
+  constructor(hull, firepower, accuracy, armor, name) {
+    this.health = health;
     this.firepower = firepower;
     this.accuracy = accuracy;
+    this.armor = armor;
     this.name = name
   }
   attack() {
-    //does the attack hit?
     if (Math.random() < this.accuracy) {
       return this.firepower
     } else
       return 0;
   }
   takeDamage(damage) {
-    this.hull - damage
+    this.health - damage
   }
 }
-
-
 
 const generateAlienStats = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min)
 }
 
-
 const generateAlienShip = () => {
-  return new Ship(generateAlienStats(3, 6), generateAlienStats(2, 4), generateAlienStats(2, 4) * 0.1, 'Alien')
+  return new Ship(generateAlienStats(3, 6), generateAlienStats(2, 4), generateAlienStats(2, 4) * 0.1, 0, 'Alien')
 }
 
 const alienTeam = [];
@@ -38,7 +35,7 @@ for (i = 0; i < 6; i++) {
 }
 
 
-const ussAssembly = new Ship(20, 5, 0.7, 'Player 1')
+const ussAssembly = new Ship(20, 5, 0.7, 0, 'Player 1')
 
 
 playGameBtn.addEventListener('click', function () {
