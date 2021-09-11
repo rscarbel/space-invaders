@@ -1,10 +1,21 @@
+:root {
+  cursor: url('assets/crosshairs.png') 30 30, auto;
+}
 body {
   font-family: sans-serif;
   margin: auto;
   text-align: center;
   background-color: #203864;
-}
+  background-image: url('assets/stars.png');
 
+}
+#earth{
+  z-index: -999;
+  position: fixed;
+  height: 80%;
+  right: 0;
+  top: 10%;
+}
 .battle-zone {
   display: flex;
   align-content: space-around;
