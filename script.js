@@ -21,6 +21,16 @@ class Ship {
   takeDamage(damage) {
     this.health = Math.floor(this.health - damage + (damage * this.armor) + 0.5);
   }
+  heal(healingAmount) {
+    this.health += healingAmount;
+    if (this.health > this.maxHealth) {
+      this.health = this.maxHealth
+    }
+  }
+}
+
+class PlayerShip extends Ship {
+
 }
 
 const generateAlienStats = (min, max) => {

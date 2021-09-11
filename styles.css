@@ -1,17 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
 :root {
-  cursor: url('assets/crosshairs.png') 30 30, auto;
-}
-body {
-  font-family: sans-serif;
-  margin: auto;
-  text-align: center;
-  background-color: #203864;
-  background-image: url('assets/stars.png');
 
 }
+body {
+  font-family: 'Share Tech Mono', monospace;
+  color: #FFFFFF;
+  margin: auto;
+  text-align: center;
+  background-image: url('assets/images/stars.png');
+  background-color: #203864;
+}
+h1 {
+  font-size: 60px;
+}
+
+#top-menu{
+  display: block;
+  height: 15vh;
+}
+#game-container {
+  display: flex;
+  align-items: stretch;
+  height:85vh;
+  cursor: url('assets/images/crosshairs.svg') 30 30, auto;
+}
+#play-box {
+  position: relative;
+  z-index: -2;
+  width: 85vw;
+  padding: 20px;
+}
+#side-menu {
+  width: 15vw;
+}
 #earth{
-  z-index: -999;
-  position: fixed;
+  z-index: -1;
+  position: absolute;
   height: 80%;
   right: 0;
   top: 10%;
@@ -21,8 +46,8 @@ body {
   align-content: space-around;
   justify-content: space-around;
 }
-#alien-ship {
-  cursor:pointer;
+.alien {
+  cursor: url('assets/images/red-crosshairs.svg') 30 30, auto;
 }
 button {
   padding: 10px 20px;
