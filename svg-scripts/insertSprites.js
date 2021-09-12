@@ -27,6 +27,7 @@ const updateDisplay = () => {
   alienSlot6DOM.innerHTML = alienSlots.alienSlot6.sprite;
 
   healthDisplay.innerHTML = `${playerShip.health}/${playerShip.maxHealth}`;
+
   healthBar.style.width = `${Math.floor(((playerShip.health / playerShip.maxHealth)) * 300)}px`;
 
 }

@@ -31,7 +31,11 @@ const attackShip = (attacker, target) => {
 function alienAttackPlayer (alien, key) {
   if (alienSlots[key].health) {
     attackShip (alien,playerShip);
-    setTimeout(function(){alienAttackPlayer(alien, key)},alien.firerate);
+    if (!playerShip.health) {
+      playerDeathSound.play()
+    } else {
+      setTimeout(function(){alienAttackPlayer(alien, key)},alien.firerate);
+    }
   }
 }
 
@@ -43,6 +47,7 @@ function playerAttackAlien (event) {
     if (alienSlots[greatGrandParentid].health === 0) {
       alienSlots[greatGrandParentid] = {sprite: ''};
       updateDisplay()
+      explosion1Sound.play()
     }
   }
 }
@@ -50,11 +55,15 @@ function playerAttackAlien (event) {
 playerShip = new PlayerShip(25, 0, 4, 1750, 0.7, 0, 'Player', playerShip0, 0, 0);
 console.log(playerShip)
 
-alienSlots.alienSlot1 = generateAlien1Ship();
+alienSlots.alienSlot1 = generateAlien2Ship();
 
 document.querySelectorAll('.alien-ship').forEach(item => item.addEventListener('click', function(){playerAttackAlien(event)}));
 
 console.log(alienSlots.alienSlot1)
 
-updateDisplay();
-alienAttackPlayer(alienSlots.alienSlot1, 'alienSlot1')
+function beginGame () {
+  document.querySelector('#play-game').remove()
+  updateDisplay();
+  newLevelSound.play()
+  alienAttackPlayer(alienSlots.alienSlot1, 'alienSlot1')
+}
