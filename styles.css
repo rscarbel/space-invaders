@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
 
 :root {
-
+  cursor: url('assets/images/crosshairs.png') 14 14, auto;
 }
 
 body {
@@ -24,8 +24,7 @@ h1 {
   display: flex;
   align-items: stretch;
   justify-content: space-around;
-  height:85vh;
-  cursor: url('assets/images/crosshairs.png') 14 14, auto;
+  height:100%;
 }
 
 
@@ -55,10 +54,11 @@ h1 {
   align-items: center;
   justify-content: center;
   height:100%;
+  width: 65%;
 }
 .player-zone {
   display: flex;
-  flex-grow: 1;
+  width: 35%;
 }
 .player-container {
   position: relative;
@@ -76,6 +76,9 @@ h1 {
 }
 g:hover {
   cursor: url('assets/images/red-crosshairs.png') 14 14, auto;
+}
+#no-shoot:hover {
+  cursor: url('assets/images/noshoot-crosshairs.png') 14 14, auto;
 }
 button {
   display: none;
