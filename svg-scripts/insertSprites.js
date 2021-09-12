@@ -1,26 +1,62 @@
 const playerShipZone = document.querySelector('#player-ship');
-const alienShipTop = document.querySelector('#alien-ship-top');
-const alienShipMiddle = document.querySelector('#alien-ship-middle');
-const alienShipBottom = document.querySelector('#alien-ship-bottom');
 const playerDamageZone = document.querySelector('#player-damage');
 
-let playerShip = {sprite: ''};
-let alien1 = {sprite: ''};
-let alien2 = {sprite: ''};
-let alien3 = {sprite: ''};
-let alien4 = {sprite: ''};
-let alien5 = {sprite: ''};
-let alien6 = {sprite: ''};
+const alienSlot1DOM = document.querySelector('#alienSlot1');
+const alienSlot2DOM = document.querySelector('#alienSlot2');
+const alienSlot3DOM = document.querySelector('#alienSlot3');
+const alienSlot4DOM = document.querySelector('#alienSlot4');
+const alienSlot5DOM = document.querySelector('#alienSlot5');
+const alienSlot6DOM = document.querySelector('#alienSlot6');
 
+
+let playerShip = {sprite: ''};
 
 const updateDisplay = () => {
 
   playerShipZone.innerHTML = playerShip.sprite;
   playerDamageZone.innerHTML = playerShip.damageSprite;
 
-  alienShipTop.innerHTML = `${alien5.sprite}${alien2.sprite}`;
+  alienSlot1DOM.innerHTML = alienSlots.alienSlot1.sprite;
+  alienSlot2DOM.innerHTML = alienSlots.alienSlot2.sprite;
+  alienSlot3DOM.innerHTML = alienSlots.alienSlot3.sprite;
+  alienSlot4DOM.innerHTML = alienSlots.alienSlot4.sprite;
+  alienSlot5DOM.innerHTML = alienSlots.alienSlot5.sprite;
+  alienSlot6DOM.innerHTML = alienSlots.alienSlot6.sprite;
 
-  alienShipMiddle.innerHTML = `${alien4.sprite}${alien1.sprite}`;
+}
 
-  alienShipBottom.innerHTML = `${alien6.sprite}${alien3.sprite}`;
+function identifySprite (shipType, damageStage) {
+  if (shipType === 'Saucer') {
+    if (damageStage === 0) {
+      return alienShip0Full
+    } else if (damageStage === 1) {
+      return alienShip0Light
+    } else if (damageStage === 2) {
+      return alienShip0Heavy
+   }
+  } else if (shipType === 'Attacker') {
+    if (damageStage === 0) {
+      return alienShip1Full
+    } else if (damageStage === 1) {
+      return alienShip1Light
+    } else if (damageStage === 2) {
+      return alienShip1Heavy
+   }
+  } else if (shipType === 'Juggernaught') {
+    if (damageStage === 0) {
+      return alienShip1Full
+    } else if (damageStage === 1) {
+      return alienShip1Light
+    } else if (damageStage === 2) {
+     return alienShip1Heavy
+   }
+  } else if (shipType === 'Player') {
+    if (damageStage === 1) {
+      return playerLightDamage;
+    } else if (damageStage === 2) {
+     return playerMediumDamage;
+   } else if (damageStage === 3) {
+    return playerHeavyDamage;
+  }
+  }
 }

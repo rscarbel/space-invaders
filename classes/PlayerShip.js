@@ -13,7 +13,7 @@ class PlayerShip extends Ship {
   }
   healthRegeneration () {
     this.heal(this.healers);
-    setTimeOut(this.healthRegeneration,2500)
+    setTimeout(this.healthRegeneration,2500)
   }
   fireMissile () {
     if (this.missiles) {
@@ -22,11 +22,11 @@ class PlayerShip extends Ship {
     return this.missiles;
     }
   checkForSpriteChange() {
-    if (this.health <= health * 0.25) {
+    if (this.health <= this.maxHealth * 0.25) {
       this.damageSprite = identifySprite(this.name,3)
-    } else if (this.health <= health * 0.6) {
+    } else if (this.health <= this.maxHealth * 0.6) {
       this.damageSprite = identifySprite(this.name,2)
-    } else if (this.health <= health * 0.90) {
+    } else if (this.health <= this.maxHealth * 0.90) {
       this.damageSprite = identifySprite(this.name,1)
     } else {
       this.damageSprite = '';

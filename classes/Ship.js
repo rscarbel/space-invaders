@@ -21,6 +21,14 @@ class Ship {
     if (this.health < 0) {
       this.health = 0;
     }
-    this.checkForSpriteChange();
+  }
+  checkForSpriteChange() {
+    if (this.health <= this.maxHealth * 0.3) {
+      this.sprite = identifySprite(this.name,2)
+    } else if (this.health <= this.maxHealth * 0.66) {
+      this.sprite = identifySprite(this.name,1)
+    } else {
+      this.sprite = identifySprite(this.name,0)
+    }
   }
 }
