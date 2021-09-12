@@ -1,3 +1,12 @@
+const alienSlots = {
+  alienSlot1: {sprite: ''},
+  alienSlot2: {sprite: ''},
+  alienSlot3: {sprite: ''},
+  alienSlot4: {sprite: ''},
+  alienSlot5: {sprite: ''},
+  alienSlot6: {sprite: ''}
+};
+
 const playerShipZone = document.querySelector('#player-ship');
 const playerDamageZone = document.querySelector('#player-damage');
 
@@ -33,7 +42,7 @@ const updateDisplay = () => {
 }
 
 function identifySprite (shipType, damageStage) {
-  if (shipType === 'Saucer') {
+  if (shipType === 'saucer') {
     if (damageStage === 0) {
       return alienShip0Full
     } else if (damageStage === 1) {
@@ -41,7 +50,7 @@ function identifySprite (shipType, damageStage) {
     } else if (damageStage === 2) {
       return alienShip0Heavy
    }
-  } else if (shipType === 'Attacker') {
+  } else if (shipType === 'attacker') {
     if (damageStage === 0) {
       return alienShip1Full
     } else if (damageStage === 1) {
@@ -49,13 +58,13 @@ function identifySprite (shipType, damageStage) {
     } else if (damageStage === 2) {
       return alienShip1Heavy
    }
-  } else if (shipType === 'Juggernaught') {
+  } else if (shipType === 'juggernaught') {
     if (damageStage === 0) {
-      return alienShip1Full
+      return alienShip2Full
     } else if (damageStage === 1) {
-      return alienShip1Light
+      return alienShip2Light
     } else if (damageStage === 2) {
-     return alienShip1Heavy
+     return alienShip2Heavy
    }
   } else if (shipType === 'Player') {
     if (damageStage === 1) {

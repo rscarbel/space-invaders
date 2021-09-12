@@ -12,7 +12,7 @@ class Ship {
   }
   attack(opponetAgility) {
     if (Math.random() < (this.accuracy - opponetAgility)) {
-      return generateValue(1,this.firepower);
+      return Utils.generateValue(1,this.firepower);
     } else
       return 0;
   }

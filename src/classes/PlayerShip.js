@@ -1,7 +1,7 @@
 class PlayerShip extends Ship {
   constructor (health, agility, firepower, firerate, accuracy, armor, name, sprite) {
     super (health, agility, firepower, firerate, accuracy, armor, name, sprite);
-    this.healers = 0;
+    this.healers = 1;
     this.missiles = 0;
     this.damageSprite = '';
   }
@@ -13,7 +13,7 @@ class PlayerShip extends Ship {
   }
   healthRegeneration () {
     this.heal(this.healers);
-    setTimeout(this.healthRegeneration,2500)
+    setTimeout(this.healthRegeneration.bind(this),3000)
   }
   fireMissile () {
     if (this.missiles) {
