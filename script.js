@@ -1,6 +1,3 @@
-const introText = document.querySelector("#intro-text");
-const playGameBtn = document.querySelector('button');
-
 const alienSlots = {
   alienSlot1: {sprite: ''},
   alienSlot2: {sprite: ''},

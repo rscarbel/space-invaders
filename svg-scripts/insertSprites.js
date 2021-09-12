@@ -8,6 +8,9 @@ const alienSlot4DOM = document.querySelector('#alienSlot4');
 const alienSlot5DOM = document.querySelector('#alienSlot5');
 const alienSlot6DOM = document.querySelector('#alienSlot6');
 
+const healthDisplay = document.querySelector('#health-display');
+const healthBar = document.querySelector('#health-remaining');
+
 
 let playerShip = {sprite: ''};
 
@@ -22,6 +25,10 @@ const updateDisplay = () => {
   alienSlot4DOM.innerHTML = alienSlots.alienSlot4.sprite;
   alienSlot5DOM.innerHTML = alienSlots.alienSlot5.sprite;
   alienSlot6DOM.innerHTML = alienSlots.alienSlot6.sprite;
+
+  healthDisplay.innerHTML = `${playerShip.health}/${playerShip.maxHealth}`;
+  healthBar.style.width = `${Math.floor(((playerShip.health / playerShip.maxHealth)) * 300)}px`;
+  console.log(`${((playerShip.health / playerShip.maxHealth)) * 300}px`)
 
 }
 

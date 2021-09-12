@@ -6,7 +6,6 @@
     <title>Space Invaders</title>
     <link href="styles.css" rel="stylesheet" type="text/css" />
     <script src="classes\Ship.js" defer></script>
-    <script src="classes\AlienShip.js" defer></script>
     <script src="classes\PlayerShip.js" defer></script>
     <script src="svg-scripts\spritesSVG.js" defer></script>
     <script src="svg-scripts\insertSprites.js" defer></script>
@@ -16,7 +15,6 @@
     <div id="top-menu">
       <h1>Space Invaders!</h1>
       <p id="intro-text">You are the galaxy's last hope! Defend against the invasion!<br/>nClick the alien ships to attack!</p>
-      <button>Play Game</button>
       <img id="earth" src="assets\images\earth.svg" alt="earth">
     </div>
     <div id="game-container">
@@ -48,19 +46,18 @@
           </div>
         </div>
       </div>
-      <div id="side-menu">
-        <table>
-          <tr>
-            <td>Health</td>
-          </tr>
-          <tr>
-            <td>Health</td>
-          </tr>
-          <tr>
-            <td>Health</td>
-          </tr>
-        </table>
+    </div>
+    <div id="bottom-menu">
+      <div id="bottom-menu-displays">
+
       </div>
+      <div id="health">
+        <p>Health <span id="health-display"></span></p>
+        <div id="health-bar">
+          <div id="health-remaining"></div>
+        </div>
+      </div>
+      </table>
     </div>
   </body>
 </html>

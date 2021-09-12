@@ -28,17 +28,8 @@ h1 {
   cursor: url('assets/images/crosshairs.png') 14 14, auto;
 }
 
-#side-menu {
-  background:cornsilk;
-  border-radius: 10px 0 0 10px;
-  color: #000000;
-  min-width: 150px;
-}
-table {
-  margin: auto;
-  width: 100%;
-}
-td:hover {
+
+.game-option:hover {
   background-color: #ffffff;
 }
 
@@ -55,7 +46,7 @@ td:hover {
   align-content: space-around;
   height: 100%;
   width:100%;
-  padding-top:20px;
+  padding-top:10%;
 }
 .alien-zone {
   display: flex;
@@ -68,7 +59,6 @@ td:hover {
 .player-zone {
   display: flex;
   flex-grow: 1;
-  padding-top:10%;
 }
 .player-container {
   position: relative;
@@ -92,8 +82,35 @@ button {
   padding: 10px 20px;
   border-radius: 7px;
 }
-@media screen and (max-width:1199px) {
-  #side-menu {
-    display: none;
-  }
+
+#bottom-menu {
+  position: fixed;
+  display: flex;
+  background:rgb(190, 234, 255);
+  border-radius: 10px 0 0 10px;
+  color: #000000;
+  bottom:0;
+  width: 100%;
+  min-height: 50px;
+  justify-content: space-between;
+}
+
+#bottom-menu-displays{
+  width:100%;
+}
+#health {
+  padding: 0 35px 15px 0;
+}
+#health-bar {
+  position: relative;
+  border-radius: 5px;
+  width:300px;
+  height: 30px;
+  background-color: #990808;
+}
+#health-remaining {
+  border-radius: 5px;
+  width:200px;
+  height: 100%;
+  background-color: #20c200;
 }
