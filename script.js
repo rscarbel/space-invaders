@@ -28,9 +28,11 @@ const attackShip = (attacker, target) => {
   updateDisplay()
 }
 
-function alienAttackPlayer (alien) {
-  attackShip (alien,playerShip);
-  setTimeout(function(){alienAttackPlayer(alien)},alien.firerate);
+function alienAttackPlayer (alien, key) {
+  if (alienSlots[key].health) {
+    attackShip (alien,playerShip);
+    setTimeout(function(){alienAttackPlayer(alien, key)},alien.firerate);
+  }
 }
 
 function playerAttackAlien (event) {
@@ -38,6 +40,10 @@ function playerAttackAlien (event) {
   if(greatGrandParentid) {
     attackShip (playerShip,alienSlots[greatGrandParentid]);
     alienSlots[greatGrandParentid].checkForSpriteChange()
+    if (alienSlots[greatGrandParentid].health === 0) {
+      alienSlots[greatGrandParentid] = {sprite: ''};
+      updateDisplay()
+    }
   }
 }
 
@@ -51,4 +57,4 @@ document.querySelectorAll('.alien-ship').forEach(item => item.addEventListener('
 console.log(alienSlots.alienSlot1)
 
 updateDisplay();
-alienAttackPlayer(alienSlots.alienSlot1)
+alienAttackPlayer(alienSlots.alienSlot1, 'alienSlot1')

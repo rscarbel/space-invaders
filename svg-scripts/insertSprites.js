@@ -28,7 +28,6 @@ const updateDisplay = () => {
 
   healthDisplay.innerHTML = `${playerShip.health}/${playerShip.maxHealth}`;
   healthBar.style.width = `${Math.floor(((playerShip.health / playerShip.maxHealth)) * 300)}px`;
-  console.log(`${((playerShip.health / playerShip.maxHealth)) * 300}px`)
 
 }
 
