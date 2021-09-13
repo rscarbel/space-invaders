@@ -107,9 +107,11 @@ g:hover {
 
 #bottom-menu-displays{
   width:100%;
+  user-select: none;
 }
 #health {
   padding: 0 35px 15px 0;
+  user-select: none;
 }
 #health-bar {
   position: relative;

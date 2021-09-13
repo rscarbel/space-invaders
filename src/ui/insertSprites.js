@@ -20,6 +20,7 @@ const alienSlot6DOM = document.querySelector('#alienSlot6');
 const healthDisplay = document.querySelector('#health-display');
 const healthBar = document.querySelector('#health-remaining');
 
+const scoreDisplay = document.querySelector('#score-display')
 
 let playerShip = {sprite: ''};
 
@@ -39,6 +40,7 @@ const updateDisplay = () => {
 
   healthBar.style.width = `${Math.floor(((playerShip.health / playerShip.maxHealth)) * 300)}px`;
 
+  scoreDisplay.textContent = score;
 }
 
 function identifySprite (shipType, damageStage) {

@@ -23,11 +23,11 @@ class PlayerShip extends Ship {
     }
   checkForSpriteChange() {
     if (this.health <= this.maxHealth * 0.25) {
-      this.damageSprite = identifySprite(this.name,3)
+      this.damageSprite = identifySprite('Player',3)
     } else if (this.health <= this.maxHealth * 0.6) {
-      this.damageSprite = identifySprite(this.name,2)
+      this.damageSprite = identifySprite('Player',2)
     } else if (this.health <= this.maxHealth * 0.90) {
-      this.damageSprite = identifySprite(this.name,1)
+      this.damageSprite = identifySprite('Player',1)
     } else {
       this.damageSprite = '';
     }

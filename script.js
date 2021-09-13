@@ -1,6 +1,8 @@
 playerShip = generateShip.player()
 playerShip.healthRegeneration()
 
+let score = 0
+
 alienSlots.alienSlot1 = randomAlien();
 
 document.querySelectorAll('.alien-ship').forEach(item => item.addEventListener('click', function(){Battle.playerAttackAlien(event)}));
@@ -13,7 +15,9 @@ function beginGame () {
   document.querySelector('#play-game').remove()
   updateDisplay();
   newLevelSound.play()
-  Battle.alienAttackPlayer(alienSlots.alienSlot1, 'alienSlot1')
+  setTimeout (function (){
+    Battle.alienAttackPlayer(alienSlots.alienSlot1, 'alienSlot1')
+  },1000)
 }
 
 Utils.oscillate(playerShipZone)

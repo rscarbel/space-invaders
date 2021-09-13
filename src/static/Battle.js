@@ -1,6 +1,8 @@
 const Battle = {
   attackShip: function (attacker, target) {
     target.takeDamage(attacker.attack(target.agility));
+    //un-comment this after playership model is refactored into a function
+    // target.checkForSpriteChange()
     updateDisplay()
   },
 
@@ -21,12 +23,15 @@ const Battle = {
       Battle.attackShip (playerShip,alienSlots[greatGrandParentid]);
       alienSlots[greatGrandParentid].checkForSpriteChange()
       if (alienSlots[greatGrandParentid].health === 0) {
+        Utils.updateScore(alienSlots[greatGrandParentid].name)
         alienSlots[greatGrandParentid] = {sprite: ''};
         updateDisplay()
         explosion1Sound.play()
         setTimeout(function(){
           alienSlots.alienSlot1 = randomAlien();
-          Battle.alienAttackPlayer(alienSlots.alienSlot1, 'alienSlot1')
+          setTimeout (function (){
+            Battle.alienAttackPlayer(alienSlots.alienSlot1, 'alienSlot1')
+          },1000)
         },3000)
       }
     }

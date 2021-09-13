@@ -8,7 +8,7 @@ const lasers = {
     let xyCoordinates = Utils.getOriginCoordinates(origin);
     beam.style.left = `${xyCoordinates.x}px`;
     beam.style.top = `${xyCoordinates.y}px`;
-    let tempId = `L${Utils.generateValue(100000,999999)}`
+    let tempId = Utils.getUniqueId();
     beam.setAttribute('id',tempId);
     battleZone.appendChild(beam);
     lasers.moveLaser(`#${tempId}`, target)

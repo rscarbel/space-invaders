@@ -3,6 +3,8 @@ const Utils = {
     return Math.floor(Math.random() * (max - min + 1) + min)
   },
 
+  getUniqueId: () => `UI${Utils.generateValue(1000000000,9999999999)}`,
+
   mousePosition: function (event) {
     return {x:event.clientX,y:event.clientY}
   },
@@ -32,5 +34,14 @@ const Utils = {
     }
     result.y = domRect.y + (domRect.height / 2);
     return result
+  },
+  updateScore : function (alien) {
+    if (alien === 'saucer') {
+      score += 100;
+    } else if (alien === 'attacker') {
+      score += 150;
+    } else if (alien === 'juggernaught') {
+      score += 200;
+    }
   }
 }
