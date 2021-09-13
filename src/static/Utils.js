@@ -43,5 +43,16 @@ const Utils = {
     } else if (alien === 'juggernaught') {
       score += 200;
     }
+  },
+  generateNode: function(sprite,origin) {
+    let newNode = document.createElement("div");
+    newNode.style.position = "absolute";
+    newNode.innerHTML = sprite;
+    let xyCoordinates = Utils.getOriginCoordinates(origin);
+    newNode.style.left = `${xyCoordinates.x}px`;
+    newNode.style.top = `${xyCoordinates.y}px`;
+    let tempId = Utils.getUniqueId();
+    newNode.setAttribute('id',tempId);
+    return {node:newNode,id:tempId}
   }
 }

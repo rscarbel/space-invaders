@@ -2,16 +2,9 @@ const battleZone = document.querySelector('.battle-zone');
 
 const lasers = {
   createLaser: function(origin,target) {
-    let beam = document.createElement("div");
-    beam.style.position = "absolute";
-    beam.innerHTML = redLaser;
-    let xyCoordinates = Utils.getOriginCoordinates(origin);
-    beam.style.left = `${xyCoordinates.x}px`;
-    beam.style.top = `${xyCoordinates.y}px`;
-    let tempId = Utils.getUniqueId();
-    beam.setAttribute('id',tempId);
-    battleZone.appendChild(beam);
-    lasers.moveLaser(`#${tempId}`, target)
+    let beam = Utils.generateNode(redLaser,origin)
+    battleZone.appendChild(beam.node);
+    lasers.moveLaser(`#${beam.id}`, target)
   },
 
   moveLaser: function (id, target) {
