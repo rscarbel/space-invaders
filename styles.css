@@ -124,3 +124,6 @@ g:hover {
   height: 100%;
   background-color: #20c200;
 }
+.laser {
+  z-index: -3;
+}

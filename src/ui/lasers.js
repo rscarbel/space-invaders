@@ -16,8 +16,6 @@ const lasers = {
 
   moveLaser: function (id, target) {
     let laser = document.querySelector(id);
-    console.log(laser)
-    console.log(laser.style.left)
     laser.animate(
       [
         {left: laser.style.left, top: laser.style.top},
@@ -35,8 +33,12 @@ const lasers = {
   getOriginCoordinates: function(node) {
     let result = {x: 0, y: 0};
     let domRect = node.getBoundingClientRect()
-    result.x = domRect.x + Math.floor((domRect.width / 2));
-    result.y = domRect.y + Math.floor((domRect.height / 2));
+    if (node === playerShipZone) {
+      result.x = domRect.x
+    } else{
+      result.x = domRect.x + domRect.width;
+    }
+    result.y = domRect.y + (domRect.height / 2);
     console.log(domRect)
     return result
   }
