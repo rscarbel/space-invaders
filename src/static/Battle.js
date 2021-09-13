@@ -7,6 +7,7 @@ const Battle = {
   },
 
   alienAttackPlayer: function (alien, key) {
+    // hitmarker.generateHitmarker(playerShipZone,5)
     if (alienSlots[key].health) {
       Battle.attackShip (alien,playerShip);
       if (!playerShip.health) {

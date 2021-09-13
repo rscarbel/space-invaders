@@ -2,7 +2,7 @@ const battleZone = document.querySelector('.battle-zone');
 
 const lasers = {
   createLaser: function(origin,target) {
-    let beam = Utils.generateNode(redLaser,origin)
+    let beam = Utils.generateNode(redLaser,origin,'div')
     battleZone.prepend(beam.node);
     lasers.moveLaser(`#${beam.id}`, target)
   },
@@ -14,6 +14,7 @@ const lasers = {
         {left: laser.style.left, top: laser.style.top},
         {left: `${target.x}px`, top: `${target.y}px`}
       ], 200);
+      laserSound.play()
     setTimeout(function(){
       laser.remove()
     }, 198)
