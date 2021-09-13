@@ -103,15 +103,15 @@ g:hover {
   width: 100%;
   min-height: 50px;
   justify-content: space-between;
+  user-select: none;
 }
 
 #bottom-menu-displays{
   width:100%;
-  user-select: none;
+  font-size: 40px;
 }
 #health {
   padding: 0 35px 15px 0;
-  user-select: none;
 }
 #health-bar {
   position: relative;

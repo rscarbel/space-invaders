@@ -17,7 +17,8 @@ class Ship {
       return 0;
   }
   takeDamage(damage) {
-    this.health = Math.floor(this.health - damage + (damage * this.armor) + 0.5);
+    let damageTaken = Math.floor(damage - (damage * this.armor) + 0.5)
+    this.health = this.health - damageTaken;
     if (this.health < 0) {
       this.health = 0;
     }
