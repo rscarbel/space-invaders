@@ -1,7 +1,7 @@
-playerShip = GenerateShip.player()
+playerShip = generateShip.player()
 playerShip.healthRegeneration()
 
-alienSlots.alienSlot1 = GenerateShip.juggernaught();
+alienSlots.alienSlot1 = randomAlien();
 
 document.querySelectorAll('.alien-ship').forEach(item => item.addEventListener('click', function(){Battle.playerAttackAlien(event)}));
 

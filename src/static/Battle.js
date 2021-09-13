@@ -24,6 +24,10 @@ const Battle = {
         alienSlots[greatGrandParentid] = {sprite: ''};
         updateDisplay()
         explosion1Sound.play()
+        setTimeout(function(){
+          alienSlots.alienSlot1 = randomAlien();
+          Battle.alienAttackPlayer(alienSlots.alienSlot1, 'alienSlot1')
+        },3000)
       }
     }
   }
