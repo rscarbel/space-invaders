@@ -19,5 +19,18 @@ const Utils = {
       easing: "ease-in-out",
       direction: 'alternate'
     });
+  },
+  getOriginCoordinates: function(node,center) {
+    let result = {x: 0, y: 0};
+    let domRect = node.getBoundingClientRect()
+    if (center){
+      result.x = domRect.x + (domRect.width / 2);
+    } else if (node === playerShipZone) {
+      result.x = domRect.x
+    } else {
+      result.x = domRect.x + domRect.width;
+    }
+    result.y = domRect.y + (domRect.height / 2);
+    return result
   }
 }

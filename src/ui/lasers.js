@@ -5,7 +5,7 @@ const lasers = {
     let beam = document.createElement("div");
     beam.style.position = "absolute";
     beam.innerHTML = redLaser;
-    let xyCoordinates = lasers.getOriginCoordinates(origin);
+    let xyCoordinates = Utils.getOriginCoordinates(origin);
     beam.style.left = `${xyCoordinates.x}px`;
     beam.style.top = `${xyCoordinates.y}px`;
     let tempId = `L${Utils.generateValue(100000,999999)}`
@@ -26,20 +26,4 @@ const lasers = {
     }, 198)
   },
 
-  playerLaser: function () {
-
-  },
-
-  getOriginCoordinates: function(node) {
-    let result = {x: 0, y: 0};
-    let domRect = node.getBoundingClientRect()
-    if (node === playerShipZone) {
-      result.x = domRect.x
-    } else{
-      result.x = domRect.x + domRect.width;
-    }
-    result.y = domRect.y + (domRect.height / 2);
-    console.log(domRect)
-    return result
-  }
 }
