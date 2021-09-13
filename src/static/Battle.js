@@ -10,6 +10,7 @@ const Battle = {
     // hitmarker.generateHitmarker(playerShipZone,5)
     if (alienSlots[key].health) {
       Battle.attackShip (alien,playerShip);
+      lasers.createLaser(document.querySelector(`#${key}`),Utils.getOriginCoordinates(playerShipZone,true))
       if (!playerShip.health) {
         playerDeathSound.play()
       } else {
