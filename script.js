@@ -15,3 +15,6 @@ function beginGame () {
   newLevelSound.play()
   Battle.alienAttackPlayer(alienSlots.alienSlot1, 'alienSlot1')
 }
+
+Utils.oscillate(playerShipZone)
+document.querySelectorAll(".alien-slot").forEach(item => Utils.oscillate(item,700,8))

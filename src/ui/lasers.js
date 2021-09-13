@@ -23,7 +23,7 @@ const lasers = {
       ], 200);
     setTimeout(function(){
       laser.remove()
-    }, 195)
+    }, 198)
   },
 
   playerLaser: function () {
