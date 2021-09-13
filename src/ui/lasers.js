@@ -3,7 +3,7 @@ const battleZone = document.querySelector('.battle-zone');
 const lasers = {
   createLaser: function(origin,target) {
     let beam = Utils.generateNode(redLaser,origin)
-    battleZone.appendChild(beam.node);
+    battleZone.prepend(beam.node);
     lasers.moveLaser(`#${beam.id}`, target)
   },
 
